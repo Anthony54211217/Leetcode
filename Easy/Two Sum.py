@@ -1,7 +1,6 @@
 #https://leetcode.com/problems/two-sum/
 
 import array
-#https://leetcode.com/problems/two-sum/
 
 class Solution:
     def twosum(self, nums: array, target: int):
