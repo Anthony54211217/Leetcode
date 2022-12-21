@@ -1,0 +1,18 @@
+#https://leetcode.com/problems/roman-to-integer
+
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        symbols = {"I": 1, "V": 5, "X": 10, "L": 50, "C": 100, "D": 500, "M": 1000}
+        total = 0
+        previous_char = 0
+        for n in range(len(s)):
+            if n == 0:
+                previous_char = 0
+                total += symbols[s[n]]
+            else:
+                if symbols[s[n]] > symbols[s[n-1]]:
+                    total += symbols[s[n]] - 2*symbols[s[n-1]]
+                else:
+                    total += symbols[s[n]]
+        return total
+    
